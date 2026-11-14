@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alankriti Creations | Handmade &amp; custom gifts</title>
+<meta name="description" content="Concept website for Alankriti Creations: handmade and customised gifts, with a live 'design your pouch' tool and a gift finder that sends your pick to Instagram.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Hind:wght@400;500;600&family=Kalam:wght@700&display=swap" rel="stylesheet">
+<style>
+/* Brief — Alankriti Creations, handmade and customised gifting (200+ orders, bulk and corporate welcome, orders by Instagram DM).
+   Personality: warm, festive, playful, proudly Indian (their cards and pouches carry Devanagari). Palette taken from their logo: gold mandala on deep maroon.
+   One idea: gifts are personal, so the page lets you personalise one before you ask. Signature moment: type a name and watch it get hand-lettered on a canvas pouch. */
+:root{--maroon:#561021;--maroon2:#3F0B18;--gold:#C8963E;--gold2:#E6BF73;--cream:#FBF1E3;--ink:#2A1216;--blush:#F2D3D6;--ease:cubic-bezier(.2,.7,.2,1);
+--disp:'Rozha One',Georgia,serif;--sans:'Hind',system-ui,sans-serif;--hand:'Kalam',cursive}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;overflow-x:clip}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+.disp{font-family:var(--disp);font-weight:400;letter-spacing:-.01em;line-height:1.02}.disp em{font-style:normal;color:var(--gold)}
+.ov{font:600 12px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+nav{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px clamp(18px,4vw,48px);transition:.4s;color:#fff}
+nav.s{background:rgba(63,11,24,.94);backdrop-filter:blur(14px)}
+.lg{display:flex;align-items:center;gap:12px}.lg i{width:42px;height:42px;display:grid;place-items:center;border:2px solid var(--gold);border-radius:6px;font:normal 400 24px/1 var(--disp);color:var(--gold)}
+.lg b{font:400 20px/1 var(--disp);letter-spacing:.06em}.lg small{display:block;font:500 9px var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold2);margin-top:3px}
+.nl{display:flex;gap:30px;font-size:14px;font-weight:500}.nl a{opacity:.8;transition:.3s}.nl a:hover{opacity:1;color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:99px;background:var(--gold);color:var(--maroon2);font:600 14px var(--sans);border:0;cursor:pointer;transition:transform .35s var(--ease),background .3s,box-shadow .3s;box-shadow:0 12px 30px -14px var(--gold)}
+.btn:hover{transform:translateY(-3px);background:var(--gold2)}.btn.d{background:var(--maroon);color:#fff;box-shadow:0 12px 30px -14px var(--maroon)}.btn.d:hover{background:var(--maroon2)}.btn.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6)}.btn.o:hover{background:#fff;color:var(--maroon)}
+/* hero */
+.hero{min-height:100svh;background:var(--maroon);color:#fff;display:grid;align-items:center;padding:110px 0 60px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(60% 70% at 80% 35%,rgba(200,150,62,.28),transparent 70%),radial-gradient(40% 50% at 8% 100%,rgba(230,191,115,.14),transparent 70%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(54px,8.6vw,138px)}.hero p.lead{margin:22px 0 28px;max-width:440px;font-size:19px;color:#EBD5D0}
+.hero .dev{font-family:var(--hand);font-size:30px;color:var(--gold2);margin-top:6px;display:block}
+.acts{display:flex;gap:12px;flex-wrap:wrap}
+.col{position:relative;aspect-ratio:1/1.08}
+.col figure{position:absolute;margin:0;overflow:hidden;box-shadow:0 30px 60px -26px rgba(0,0,0,.7);border:5px solid var(--cream);border-radius:20px}
+.col img{width:100%;height:100%;object-fit:cover}
+.c1{left:0;top:6%;width:58%;aspect-ratio:1;transform:rotate(-5deg)}.c2{right:0;top:0;width:46%;aspect-ratio:3/4;transform:rotate(5deg);border-radius:200px 200px 20px 20px!important}.c3{right:6%;bottom:0;width:52%;aspect-ratio:1;transform:rotate(-3deg)}
+.stk{position:absolute;left:-2%;bottom:4%;z-index:3;width:118px;height:118px;border-radius:50%;background:var(--gold);color:var(--maroon2);display:grid;place-items:center;text-align:center;font:400 28px/1 var(--disp);transform:rotate(-12deg);box-shadow:0 16px 40px -12px #000}.stk small{display:block;font:600 10px/1.2 var(--sans);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.tg{position:absolute;left:50%;top:-12px;transform:translateX(-50%);z-index:4;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:var(--cream);color:var(--ink);padding:5px 12px;border-radius:99px;white-space:nowrap}
+/* marquee */
+.mq{background:var(--gold);color:var(--maroon2);padding:15px 0;overflow:hidden}.mq div{display:flex;gap:42px;width:max-content;animation:mq 36s linear infinite;font:400 24px/1 var(--disp)}.mq span:nth-child(even){color:#fff}@keyframes mq{to{transform:translateX(-50%)}}
+section{padding:clamp(70px,11vw,150px) 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:38px}.sh h2{font-size:clamp(40px,6.6vw,100px);color:var(--maroon)}.sh p{max-width:380px;opacity:.75}
+/* finder */
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}.chips button{font:600 15px var(--sans);color:var(--maroon);background:transparent;border:1.6px solid var(--maroon);border-radius:99px;padding:11px 22px;cursor:pointer;transition:.3s}
+.chips button.on,.chips button:hover{background:var(--maroon);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 26px 60px -42px rgba(86,16,33,.7);transition:transform .5s var(--ease),opacity .4s,box-shadow .4s;display:flex;flex-direction:column}
+.card.h{display:none}.card:hover{transform:translateY(-8px);box-shadow:0 40px 70px -40px rgba(86,16,33,.8)}
+.card .im{aspect-ratio:1;overflow:hidden;position:relative}.card img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}.card:hover img{transform:scale(1.07)}
+.card .for{position:absolute;left:12px;top:12px;background:var(--maroon);color:#fff;font:600 10px var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;border-radius:99px}
+.card .tx{padding:20px 22px 24px;display:flex;flex-direction:column;flex:1}.card h3{font:400 24px/1.15 var(--disp);color:var(--maroon)}.card p{font-size:15px;opacity:.75;margin:8px 0 16px;flex:1}
+.card a{font:600 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--maroon);border-bottom:2px solid var(--gold);padding-bottom:3px;align-self:flex-start;transition:.3s}.card a:hover{color:var(--gold)}
+.note{font-size:12px;opacity:.6;margin-top:28px}
+/* designer */
+.dz{background:var(--blush)}.dz .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(28px,5vw,80px);align-items:center}
+.dz h2{font-size:clamp(40px,6.4vw,96px);color:var(--maroon)}.dz p.tl{margin:14px 0 22px;max-width:420px;opacity:.8}
+.fld{margin-bottom:20px}.fld h4{font:600 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;margin-bottom:9px;opacity:.7}
+.fld input[type=text],.fld input[type=date]{width:100%;border:0;border-bottom:2px solid rgba(86,16,33,.35);background:transparent;font:500 22px var(--sans);color:var(--ink);padding:8px 0;outline:0}.fld input:focus{border-color:var(--maroon)}
+.pl{display:flex;gap:9px;flex-wrap:wrap}.pl button{font:500 14px var(--sans);color:var(--maroon);background:#fff;border:1.5px solid transparent;border-radius:99px;padding:9px 17px;cursor:pointer;transition:.3s;box-shadow:0 6px 14px -10px rgba(0,0,0,.5)}
+.pl button.on,.pl button:hover{background:var(--maroon);color:#fff}
+.inks{display:flex;gap:11px}.inks button{width:38px;height:38px;border-radius:50%;border:3px solid #fff;background:var(--c);cursor:pointer;box-shadow:0 6px 14px -8px rgba(0,0,0,.6);transition:.3s}.inks button.on{outline:2px solid var(--maroon);outline-offset:2px;transform:scale(1.12)}
+.stage{background:#fff;border-radius:30px;padding:clamp(18px,3vw,34px);box-shadow:0 40px 90px -44px rgba(86,16,33,.8);position:relative}
+.stage svg{width:100%;height:auto;display:block;filter:drop-shadow(0 18px 22px rgba(60,20,20,.25))}
+.stage .cap{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:12px;opacity:.6}
+.pn{font-family:var(--hand);font-weight:700}
+.msg{font-size:13px;min-height:20px;color:var(--maroon);font-weight:600;margin:10px 0}
+/* hampers + bulk */
+.hm{background:var(--maroon2);color:#fff}.hm .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,90px);align-items:center}
+.hm h2{font-size:clamp(40px,6.4vw,96px);margin:14px 0 18px}.hm p{opacity:.85;max-width:430px}
+.hm .ph{border-radius:220px 220px 26px 26px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 0 0 10px rgba(255,255,255,.06),0 0 0 11px rgba(200,150,62,.5)}.hm .ph img{width:100%;height:100%;object-fit:cover}
+.hm ul{list-style:none;margin:22px 0 28px;display:grid;gap:10px}.hm li{padding-left:28px;position:relative}.hm li:before{content:"✦";position:absolute;left:0;color:var(--gold)}
+.bulk .wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:center}.bulk h2{font-size:clamp(38px,6vw,88px);color:var(--maroon);margin:14px 0 18px}.bulk p{opacity:.8;max-width:420px}
+form{display:grid;gap:16px;background:#fff;padding:clamp(22px,3vw,38px);border-radius:26px;box-shadow:0 30px 70px -44px rgba(86,16,33,.8)}form label{font:600 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;display:grid;gap:7px;opacity:.85}
+form input,form select{border:0;border-bottom:1.6px solid rgba(86,16,33,.35);background:transparent;font:500 17px var(--sans);color:var(--ink);padding:7px 0;outline:0}form input:focus,form select:focus{border-color:var(--maroon)}.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+footer{background:#220710;color:#D9BFB9;padding:46px 0 120px;font-size:13px}footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}footer a:hover{color:var(--gold2)}
+.toast{position:fixed;left:50%;bottom:90px;transform:translate(-50%,30px);background:var(--maroon2);color:#fff;padding:12px 22px;border-radius:99px;font-size:14px;opacity:0;pointer-events:none;transition:.4s var(--ease);z-index:90}.toast.on{opacity:1;transform:translate(-50%,0)}
+.bar{display:none}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.rv.in{opacity:1;transform:none}
+@media(max-width:1000px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.nl{display:none}.hero .wrap,.dz .wrap,.hm .wrap,.bulk .wrap{grid-template-columns:1fr}.col{max-width:440px;margin:0 auto;width:100%}
+.bar{display:flex;position:fixed;inset:auto 0 0 0;z-index:60;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(63,11,24,.96);backdrop-filter:blur(14px)}.bar a{flex:1;justify-content:center;padding:13px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}nav .btn{padding:10px 14px;font-size:12px;white-space:nowrap}.lg b{font-size:16px}.lg i{width:36px;height:36px;font-size:20px}.stk{width:92px;height:92px;font-size:22px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav id="nav"><a class="lg" href="#top"><i>अ</i><span><b>Alankriti</b><small>Creations</small></span></a><div class="nl"><a href="#gifts">Gift finder</a><a href="#design">Design a pouch</a><a href="#hampers">Hampers</a><a href="#bulk">Bulk orders</a></div><a class="btn" href="https://ig.me/m/alankriti._.creations" target="_blank" rel="noopener">Order on Instagram</a></nav>
+
+<header class="hero" id="top"><div class="wrap">
+<div><p class="ov">Handmade &amp; customised gifts</p>
+<h1 class="disp" style="margin-top:14px">Gifts that<br>feel like <em>you.</em></h1><span class="dev">अलंकृति · हाथ से बना, दिल से दिया</span>
+<p class="lead">Hand-painted pouches, crochet keychains, rakhi hampers and more, made with names, doodles and little notes. Tell us who it's for and we'll make it theirs.</p>
+<div class="acts"><a class="btn" href="#design">Design a pouch</a><a class="btn o" href="#gifts">Find a gift</a></div></div>
+<div class="col"><span class="tg">● from their Instagram</span>
+<figure class="c1"><img src="img/pouch-peacock.jpg" alt="Madhubani peacock hand-painted pouch"></figure>
+<figure class="c2"><img src="img/earring-card.jpg" alt="Earring and an Alankriti playing-card note" style="object-position:60% 50%"></figure>
+<figure class="c3"><img src="img/keychain-cups.jpg" alt="Crochet coffee-cup keychains held as a heart"></figure>
+<span class="stk">200+<small>orders<br>completed</small></span></div>
+</div></header>
+
+<div class="mq" aria-hidden="true"><div><span>Custom name pouches</span><span>Crochet keychains</span><span>Rakhi hampers</span><span>Hand-painted totes</span><span>Bulk &amp; corporate orders</span><span>Custom name pouches</span><span>Crochet keychains</span><span>Rakhi hampers</span><span>Hand-painted totes</span><span>Bulk &amp; corporate orders</span><span>Custom name pouches</span><span>Crochet keychains</span><span>Rakhi hampers</span><span>Hand-painted totes</span><span>Bulk &amp; corporate orders</span><span>Custom name pouches</span><span>Crochet keychains</span><span>Rakhi hampers</span><span>Hand-painted totes</span><span>Bulk &amp; corporate orders</span></div></div>
+
+<section id="gifts"><div class="wrap">
+<div class="sh rv"><h2 class="disp">Who is it <em>for?</em></h2><p>Pick the person and we'll show gifts they'll love. Tap "Ask about this" and the gift name is copied for your DM.</p></div>
+<div class="chips rv" id="chips"><button class="on" data-f="all">Everyone</button><button data-f="brother">Brother</button><button data-f="friend">Best friend</button><button data-f="partner">Partner</button><button data-f="mom">Mom or sister</button><button data-f="me">Treat myself</button></div>
+<div class="grid" id="grid"></div>
+<p class="note">All photos are from Alankriti's Instagram. A concept site: names and descriptions are placeholders until you add the full catalogue and prices.</p>
+</div></section>
+
+<section class="dz" id="design"><div class="wrap">
+<div class="rv"><p class="ov" style="color:var(--maroon)">Signature tool</p><h2 class="disp" style="margin-top:14px">Design your<br><em>pouch.</em></h2><p class="tl">Type a name, pick a doodle and an ink colour, and see it lettered on a canvas pouch. When you love it, we copy the design and open your DM.</p>
+<div class="fld"><h4>Name (English or हिन्दी)</h4><input type="text" id="nm" value="Anaya" maxlength="14" aria-label="Name on the pouch"></div>
+<div class="fld"><h4>Doodle</h4><div class="pl" id="dd"><button class="on" data-d="cherry">Cherries &amp; bows</button><button data-d="lily">Lily</button><button data-d="hearts">Hearts</button><button data-d="peacock">Peacock</button></div></div>
+<div class="fld"><h4>Ink colour</h4><div class="inks" id="ik"><button class="on" style="--c:#B3202F" data-c="#B3202F" aria-label="Red"></button><button style="--c:#E0529C" data-c="#E0529C" aria-label="Pink"></button><button style="--c:#561021" data-c="#561021" aria-label="Maroon"></button><button style="--c:#1F6F6A" data-c="#1F6F6A" aria-label="Teal"></button><button style="--c:#2A1216" data-c="#2A1216" aria-label="Black"></button></div></div>
+<div class="fld"><h4>Needed by</h4><input type="date" id="dt" aria-label="Needed by"></div>
+<div class="msg" id="msg"></div>
+<button class="btn d" id="go">Copy design &amp; open DM →</button></div>
+<div class="stage rv"><svg viewBox="0 0 420 280" id="pz" aria-label="Your pouch preview"></svg><div class="cap">Preview only. The real pouch is hand-painted, so it will look a little different.</div></div>
+</div></section>
+
+<section class="hm" id="hampers"><div class="wrap">
+<div class="rv"><p class="ov">Hampers</p><h2 class="disp">Rakhi, birthdays,<br><em>thank-yous.</em></h2><p>Gift boxes packed with a handmade rakhi or keepsake, a keychain and a hand-painted pouch, with a custom thank-you note. Their Iron Man and Panda hampers start at ₹299.</p>
+<ul><li>Custom name on the pouch</li><li>Personal note card in every box</li><li>Festive, birthday and friendship-day themes</li></ul><a class="btn" href="https://ig.me/m/alankriti._.creations" target="_blank" rel="noopener">Ask about hampers</a></div>
+<div class="ph rv"><img src="img/hamper-ironman.jpg" alt="Iron Man themed rakhi hamper box with a keychain and painted pouch" loading="lazy"></div>
+</div></section>
+
+<section class="bulk" id="bulk"><div class="wrap">
+<div class="rv"><p class="ov" style="color:var(--maroon)">Bulk &amp; corporate</p><h2 class="disp">Gifting for<br>the whole <em>team.</em></h2><p>Weddings, offices, events and return gifts. Tell us how many and when, and we'll plan the design, the packing and the personalisation.</p></div>
+<form id="bf" class="rv"><label>Your name / company<input id="bn" placeholder="e.g. Sharma Weddings" required></label><div class="two"><label>How many gifts<select id="bq"><option>10 to 25</option><option>25 to 50</option><option>50 to 100</option><option>100+</option></select></label><label>Occasion<select id="bo"><option>Wedding / return gifts</option><option>Corporate gifting</option><option>Festival</option><option>Event</option></select></label></div><label>Needed by<input type="date" id="bd"></label><button class="btn d" type="submit">Copy enquiry &amp; open DM →</button></form>
+</div></section>
+
+<footer><div class="wrap"><div><b style="color:#fff">Alankriti Creations</b><br>Handmade &amp; custom gifting shop · DM to order</div><div><a href="https://www.instagram.com/alankriti._.creations/" target="_blank" rel="noopener">@alankriti._.creations</a></div><div style="max-width:340px;font-size:12px">A concept website made by Kavimir as a sample for Alankriti Creations, using only your own photos. Not an official page.</div></div></footer>
+<div class="toast" id="toast">Copied. Paste it in the DM.</div>
+<div class="bar"><a class="btn" href="https://ig.me/m/alankriti._.creations" target="_blank" rel="noopener">Order on Instagram</a><a class="btn o" href="#design">Design a pouch</a></div>
+<script>
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>40),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const DM='https://ig.me/m/alankriti._.creations';
+function sendDM(text){(navigator.clipboard?navigator.clipboard.writeText(text):Promise.reject()).catch(()=>{}).finally(()=>{const t=document.getElementById('toast');t.classList.add('on');setTimeout(()=>t.classList.remove('on'),3500);setTimeout(()=>open(DM,'_blank'),700)})}
+/* gift finder */
+const G=[["Iron Man hamper","brother","Brother","A handmade rakhi, a keychain and a painted pouch in a gift box. From ₹299.","img/hamper-ironman.jpg"],["Crochet coffee-cup keychains","friend","Best friend","A matching pair, made for best friends who share every chai.","img/keychain-cups.jpg"],["Crochet rose","partner","Partner","A rose that never wilts, wrapped like a bouquet.","img/rose-set.jpg","80% 62%"],["Madhubani peacock pouch","mom","Mom or sister","Hand-painted peacock with a name in Devanagari.","img/pouch-peacock.jpg"],["Custom name pouches","me","Treat myself","Cherries, lilies, any doodle you like, with your name on top.","img/pouches-cherry.jpg"],["Hand-painted tote bag","me","Treat myself","Wearable art with your own words painted on.","img/tote.jpg"]];
+const grid=document.getElementById('grid');
+grid.innerHTML=G.map(g=>`<article class="card rv" data-f="${g[1]}"><div class="im"><span class="for">For ${g[2].toLowerCase()}</span><img src="${g[4]}" alt="${g[0]}" loading="lazy" style="object-position:${g[5]||'50% 50%'}"></div><div class="tx"><h3>${g[0]}</h3><p>${g[3]}</p><a href="${DM}" target="_blank" rel="noopener" data-g="${g[0]}">Ask about this</a></div></article>`).join('');
+grid.querySelectorAll('.rv').forEach(el=>io.observe(el));
+grid.addEventListener('click',e=>{const a=e.target.closest('a[data-g]');if(!a)return;e.preventDefault();sendDM(`Hi Alankriti Creations! I'd like to ask about: ${a.dataset.g}`)});
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;grid.querySelectorAll('.card').forEach(c=>c.classList.toggle('h',f!=='all'&&c.dataset.f!==f))});
+/* pouch designer */
+const DOOD={
+ cherry:c=>`<g stroke="${c}" fill="none" stroke-width="3.2" stroke-linecap="round"><path d="M60 214 q10 -22 32 -8 M92 206 q22 -16 34 4"/><path d="M78 212 q-12 -10 -6 -22" stroke="#4a7a3a"/></g><circle cx="62" cy="222" r="10" fill="${c}"/><circle cx="98" cy="214" r="10" fill="${c}"/><g fill="none" stroke="${c}" stroke-width="3"><path d="M330 210 l22 -14 -4 22 -18 -8 22 -2 -4 -14z"/></g><circle cx="318" cy="224" r="9" fill="${c}"/><circle cx="342" cy="228" r="9" fill="${c}"/>`,
+ lily:c=>`<g transform="translate(88 206)" fill="${c}" opacity=".9">${[0,72,144,216,288].map(a=>`<ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(${a})"/>`).join('')}<circle r="4" fill="#E6BF73"/></g><g transform="translate(332 212) scale(.7)" fill="${c}" opacity=".85">${[0,72,144,216,288].map(a=>`<ellipse cx="0" cy="-16" rx="7" ry="16" transform="rotate(${a})"/>`).join('')}<circle r="4" fill="#E6BF73"/></g>`,
+ hearts:c=>`<g fill="${c}"><path d="M70 224 c-16 -10 -18 -26 -6 -30 6 -2 10 2 12 6 2 -4 6 -8 12 -6 12 4 10 20 -6 30z" transform="translate(-4 0)"/><path d="M330 214 c-12 -8 -14 -20 -4 -22 5 -1 8 2 10 5 2 -3 5 -6 10 -5 9 2 8 14 -4 22z"/><path d="M110 236 c-7 -4 -8 -11 -2 -12 3 0 5 1 6 3 1 -2 3 -3 6 -3 5 1 4 8 -2 12z" opacity=".7"/></g>`,
+ peacock:c=>`<g transform="translate(88 206)">${[-50,-25,0,25,50].map(a=>`<g transform="rotate(${a})"><ellipse cx="0" cy="-26" rx="7" ry="20" fill="${c}" opacity=".85"/><circle cx="0" cy="-34" r="4" fill="#E6BF73"/></g>`).join('')}<circle r="7" fill="${c}"/></g><g transform="translate(335 214) scale(.65)">${[-50,-25,0,25,50].map(a=>`<g transform="rotate(${a})"><ellipse cx="0" cy="-26" rx="7" ry="20" fill="${c}" opacity=".85"/></g>`).join('')}<circle r="7" fill="${c}"/></g>`};
+const st={d:'cherry',c:'#B3202F'};
+const pz=document.getElementById('pz'),nm=document.getElementById('nm'),msg=document.getElementById('msg');
+function draw(){const name=(nm.value||'Your name').trim();const sz=name.length>10?46:name.length>7?58:72;
+ pz.innerHTML=`<defs><pattern id="cv" width="6" height="6" patternUnits="userSpaceOnUse"><path d="M0 0h6v6H0z" fill="#F3E5CE"/><path d="M0 3h6M3 0v6" stroke="#E7D3B3" stroke-width=".6"/></pattern></defs>
+ <rect x="20" y="44" width="380" height="214" rx="20" fill="url(#cv)" stroke="#D9C09A" stroke-width="2"/>
+ <rect x="20" y="44" width="380" height="34" rx="18" fill="#EAD7B8"/><path d="M34 62 H386" stroke="#6b5a45" stroke-width="2" stroke-dasharray="3 5"/>
+ <rect x="188" y="52" width="46" height="22" rx="11" fill="#8a7a68"/><rect x="196" y="56" width="30" height="14" rx="7" fill="#B9AA95"/>
+ <text x="210" y="168" text-anchor="middle" class="pn" font-size="${sz}" fill="${st.c}" textLength="${Math.min(330,name.length*sz*.52)}" lengthAdjust="spacingAndGlyphs">${name.replace(/&/g,'&amp;').replace(/</g,'&lt;')}</text>
+ ${DOOD[st.d](st.c)}`}
+nm.addEventListener('input',draw);
+document.getElementById('dd').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');st.d=b.dataset.d;draw()});
+document.getElementById('ik').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;[...b.parentElement.children].forEach(x=>x.classList.remove('on'));b.classList.add('on');st.c=b.dataset.c;draw()});
+const dt=document.getElementById('dt');dt.min=new Date().toISOString().slice(0,10);
+document.getElementById('go').addEventListener('click',()=>{if(!nm.value.trim()){msg.textContent='Type a name first.';return}msg.textContent='';const names={cherry:'Cherries & bows',lily:'Lily',hearts:'Hearts',peacock:'Peacock'};
+ sendDM(`Hi Alankriti Creations! I'd like a custom pouch:\nName: ${nm.value.trim()}\nDoodle: ${names[st.d]}\nInk: ${st.c}\nNeeded by: ${dt.value||'flexible'}`)});
+draw();
+/* bulk */
+const bd=document.getElementById('bd');bd.min=new Date().toISOString().slice(0,10);
+document.getElementById('bf').addEventListener('submit',e=>{e.preventDefault();sendDM(`Hi Alankriti Creations! Bulk enquiry:\nFrom: ${document.getElementById('bn').value}\nQuantity: ${document.getElementById('bq').value}\nOccasion: ${document.getElementById('bo').value}\nNeeded by: ${bd.value||'flexible'}`)});
+</script>
+</body></html>
